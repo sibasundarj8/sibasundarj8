@@ -1,0 +1,76 @@
+<svg width="1600" height="220" viewBox="0 0 1600 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">API Gateway Architecture Divider</title>
+  <desc id="desc">A clean dark SVG divider showing traffic moving through an API gateway into backend services.</desc>
+  <defs>
+    <linearGradient id="api-bg" x1="0" y1="0" x2="1600" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070D"/>
+      <stop offset="0.5" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#05070D"/>
+    </linearGradient>
+    <linearGradient id="api-line" x1="80" y1="110" x2="1520" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1117"/>
+      <stop offset="0.18" stop-color="#1F6FEB"/>
+      <stop offset="0.5" stop-color="#00E5FF"/>
+      <stop offset="0.82" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#0D1117"/>
+    </linearGradient>
+    <filter id="api-glow" x="-60%" y="-160%" width="220%" height="420%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .api-label { font: 700 16px JetBrains Mono, Consolas, Menlo, monospace; fill: #E6EDF3; }
+      .api-sub { font: 500 12px JetBrains Mono, Consolas, Menlo, monospace; fill: #94A3B8; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="220" fill="url(#api-bg)"/>
+  <path d="M80 110H1520" stroke="url(#api-line)" stroke-width="2"/>
+  <path d="M674 110H926" stroke="#00E5FF" stroke-width="7" stroke-linecap="round" opacity="0.14"/>
+
+  <g filter="url(#api-glow)">
+    <rect x="186" y="70" width="142" height="80" rx="14" fill="#0A0F16" stroke="#1F6FEB"/>
+    <text x="257" y="105" text-anchor="middle" class="api-label">CLIENTS</text>
+    <text x="257" y="129" text-anchor="middle" class="api-sub">web / mobile</text>
+
+    <rect x="690" y="54" width="220" height="112" rx="18" fill="#0A0F16" stroke="#00E5FF" stroke-width="2"/>
+    <text x="800" y="100" text-anchor="middle" class="api-label">API GATEWAY</text>
+    <text x="800" y="126" text-anchor="middle" class="api-sub">auth • routing • limits</text>
+
+    <rect x="1164" y="44" width="148" height="56" rx="12" fill="#0A0F16" stroke="#2DD4BF"/>
+    <text x="1238" y="78" text-anchor="middle" class="api-label">AUTH</text>
+
+    <rect x="1164" y="122" width="148" height="56" rx="12" fill="#0A0F16" stroke="#1F6FEB"/>
+    <text x="1238" y="156" text-anchor="middle" class="api-label">ORDERS</text>
+
+    <rect x="1352" y="44" width="148" height="56" rx="12" fill="#0A0F16" stroke="#00E5FF"/>
+    <text x="1426" y="78" text-anchor="middle" class="api-label">CATALOG</text>
+
+    <rect x="1352" y="122" width="148" height="56" rx="12" fill="#0A0F16" stroke="#2DD4BF"/>
+    <text x="1426" y="156" text-anchor="middle" class="api-label">EVENTS</text>
+  </g>
+
+  <path d="M328 110H690" stroke="#1F6FEB" stroke-width="1.6" opacity="0.75"/>
+  <path d="M910 110C1012 110 1050 72 1164 72" stroke="#2DD4BF" stroke-width="1.6" opacity="0.75"/>
+  <path d="M910 110C1012 110 1050 150 1164 150" stroke="#1F6FEB" stroke-width="1.6" opacity="0.75"/>
+  <path d="M910 110C1084 110 1168 72 1352 72" stroke="#00E5FF" stroke-width="1.6" opacity="0.75"/>
+  <path d="M910 110C1084 110 1168 150 1352 150" stroke="#2DD4BF" stroke-width="1.6" opacity="0.75"/>
+
+  <g filter="url(#api-glow)">
+    <circle r="5" fill="#FFFFFF">
+      <animateMotion dur="3.7s" repeatCount="indefinite" path="M328 110H690"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#00E5FF">
+      <animateMotion dur="3.4s" begin="0.5s" repeatCount="indefinite" path="M910 110C1084 110 1168 72 1352 72"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3.4s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#2DD4BF">
+      <animateMotion dur="3.4s" begin="1.1s" repeatCount="indefinite" path="M910 110C1084 110 1168 150 1352 150"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3.4s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,91 @@
+<svg width="1600" height="360" viewBox="0 0 1600 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kafka Event Stream Visual</title>
+  <desc id="desc">A dark professional Kafka event stream visualization with producers, topic partitions, consumers, and animated events.</desc>
+  <defs>
+    <linearGradient id="kafka-bg" x1="0" y1="0" x2="1600" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070D"/>
+      <stop offset="0.52" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#061D20"/>
+    </linearGradient>
+    <linearGradient id="stream" x1="120" y1="180" x2="1480" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F6FEB" stop-opacity="0"/>
+      <stop offset="0.15" stop-color="#1F6FEB"/>
+      <stop offset="0.5" stop-color="#00E5FF"/>
+      <stop offset="0.85" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="kafka-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .kafka-label { font: 700 18px JetBrains Mono, Consolas, Menlo, monospace; fill: #E6EDF3; }
+      .kafka-sub { font: 500 13px JetBrains Mono, Consolas, Menlo, monospace; fill: #94A3B8; }
+      .partition { fill: #0A0F16; stroke: #243041; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="360" rx="28" fill="url(#kafka-bg)"/>
+  <path id="event-line" d="M130 180H1470" stroke="url(#stream)" stroke-width="2"/>
+
+  <g transform="translate(112 96)" filter="url(#kafka-glow)">
+    <rect width="230" height="168" rx="18" fill="#0A0F16" stroke="#1F6FEB"/>
+    <text x="115" y="56" text-anchor="middle" class="kafka-label">PRODUCERS</text>
+    <text x="115" y="88" text-anchor="middle" class="kafka-sub">orders • payments • audit</text>
+    <path d="M56 122H174" stroke="#00E5FF" stroke-width="1.4" opacity="0.75"/>
+    <path d="M56 140H144" stroke="#2DD4BF" stroke-width="1.4" opacity="0.55"/>
+  </g>
+
+  <g transform="translate(520 58)" filter="url(#kafka-glow)">
+    <rect width="560" height="244" rx="22" fill="#0A0F16" stroke="#00E5FF" stroke-width="1.8"/>
+    <text x="280" y="42" text-anchor="middle" class="kafka-label">KAFKA TOPIC: order.events</text>
+    <text x="280" y="66" text-anchor="middle" class="kafka-sub">append-only log • replicated partitions • consumer offsets</text>
+    <g transform="translate(54 92)">
+      <rect class="partition" width="452" height="32" rx="8"/>
+      <rect x="16" y="8" width="54" height="16" rx="5" fill="#1F6FEB" opacity="0.78"/>
+      <rect x="82" y="8" width="54" height="16" rx="5" fill="#00E5FF" opacity="0.84"/>
+      <rect x="148" y="8" width="54" height="16" rx="5" fill="#2DD4BF" opacity="0.74"/>
+      <text x="-20" y="22" text-anchor="end" class="kafka-sub">p0</text>
+    </g>
+    <g transform="translate(54 142)">
+      <rect class="partition" width="452" height="32" rx="8"/>
+      <rect x="40" y="8" width="54" height="16" rx="5" fill="#00E5FF" opacity="0.78"/>
+      <rect x="106" y="8" width="54" height="16" rx="5" fill="#2DD4BF" opacity="0.72"/>
+      <rect x="172" y="8" width="54" height="16" rx="5" fill="#1F6FEB" opacity="0.78"/>
+      <text x="-20" y="22" text-anchor="end" class="kafka-sub">p1</text>
+    </g>
+    <g transform="translate(54 192)">
+      <rect class="partition" width="452" height="32" rx="8"/>
+      <rect x="28" y="8" width="54" height="16" rx="5" fill="#2DD4BF" opacity="0.78"/>
+      <rect x="94" y="8" width="54" height="16" rx="5" fill="#1F6FEB" opacity="0.76"/>
+      <rect x="160" y="8" width="54" height="16" rx="5" fill="#00E5FF" opacity="0.82"/>
+      <text x="-20" y="22" text-anchor="end" class="kafka-sub">p2</text>
+    </g>
+  </g>
+
+  <g transform="translate(1258 96)" filter="url(#kafka-glow)">
+    <rect width="230" height="168" rx="18" fill="#0A0F16" stroke="#2DD4BF"/>
+    <text x="115" y="56" text-anchor="middle" class="kafka-label">CONSUMERS</text>
+    <text x="115" y="88" text-anchor="middle" class="kafka-sub">workers • search • alerts</text>
+    <path d="M56 122H174" stroke="#00E5FF" stroke-width="1.4" opacity="0.75"/>
+    <path d="M86 140H174" stroke="#2DD4BF" stroke-width="1.4" opacity="0.55"/>
+  </g>
+
+  <g filter="url(#kafka-glow)">
+    <circle r="6" fill="#FFFFFF">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M342 180H520"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="6" fill="#00E5FF">
+      <animateMotion dur="5s" repeatCount="indefinite" path="M1080 180H1258"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5" fill="#2DD4BF">
+      <animateMotion dur="4.8s" begin="0.9s" repeatCount="indefinite" path="M342 180H1258"/>
+      <animate attributeName="opacity" values="0;0.85;0" dur="4.8s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

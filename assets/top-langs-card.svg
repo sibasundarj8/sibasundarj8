@@ -1,0 +1,28 @@
+<svg width="640" height="320" viewBox="0 0 640 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Most used languages for sibasundarj8</title>
+  <desc id="desc">Local top languages card generated from public GitHub repository language data.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070D"/>
+      <stop offset="0.55" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#061D20"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="320" rx="18" fill="url(#bg)"/>
+  <rect x="1" y="1" width="638" height="318" rx="17" stroke="#243041"/>
+  <text x="34" y="52" fill="#E6EDF3" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="800">Most Used Languages</text>
+  <text x="34" y="78" fill="#9BA8B7" font-family="JetBrains Mono, Consolas, monospace" font-size="13">public repository language breakdown</text>
+  <rect x="34" y="116" width="572" height="14" rx="7" fill="#243041"/>
+  <rect x="34.00" y="116" width="572.00" height="14" rx="7" fill="#00E5FF"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    
+    <g transform="translate(38 172)">
+      <circle cx="0" cy="-5" r="5" fill="#00E5FF"/>
+      <text x="18" y="0" fill="#E6EDF3" font-size="16" font-weight="700">Java</text>
+      <text x="526" y="0" fill="#9BA8B7" font-size="15" font-weight="700" text-anchor="end">100.0%</text>
+      <rect x="112" y="-12" width="344" height="8" rx="4" fill="#243041"/>
+      <rect x="112" y="-12" width="344.00" height="8" rx="4" fill="#00E5FF"/>
+    </g>
+  </g>
+  <text x="34" y="302" fill="#64748B" font-family="JetBrains Mono, Consolas, monospace" font-size="12">Updated May 24, 2026 via GitHub API</text>
+</svg>

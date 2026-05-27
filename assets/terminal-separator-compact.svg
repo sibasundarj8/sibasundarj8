@@ -1,0 +1,30 @@
+<svg width="1600" height="72" viewBox="0 0 1600 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Compact Terminal Separator</title>
+  <desc id="desc">A slim terminal-style SVG separator with dark cyber infrastructure aesthetics.</desc>
+  <defs>
+    <linearGradient id="line" x1="60" y1="36" x2="1540" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070D"/>
+      <stop offset="0.35" stop-color="#1F6FEB"/>
+      <stop offset="0.5" stop-color="#00E5FF"/>
+      <stop offset="0.65" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#05070D"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-300%" width="140%" height="700%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="72" fill="#0D1117"/>
+  <path d="M60 36H1540" stroke="url(#line)" stroke-width="1.5"/>
+  <g filter="url(#glow)">
+    <path d="M736 22L760 36L736 50" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M792 50H864" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round"/>
+    <rect x="878" y="25" width="8" height="22" rx="3" fill="#00E5FF">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.05s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

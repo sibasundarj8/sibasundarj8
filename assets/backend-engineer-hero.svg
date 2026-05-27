@@ -1,0 +1,79 @@
+<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Backend Engineer Hero Banner</title>
+  <desc id="desc">A dark futuristic backend engineering banner with service nodes, API traces, and clean cyber infrastructure styling.</desc>
+  <defs>
+    <linearGradient id="hero-bg" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#05070D"/>
+      <stop offset="0.48" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#071B24"/>
+    </linearGradient>
+    <radialGradient id="hero-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1140 146) rotate(133) scale(460 220)">
+      <stop stop-color="#00E5FF" stop-opacity="0.28"/>
+      <stop offset="0.55" stop-color="#1F6FEB" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#1F6FEB" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00E5FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#1F6FEB" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#243041" stroke-opacity="0.34" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="520" rx="30" fill="url(#hero-bg)"/>
+  <rect width="1600" height="520" rx="30" fill="url(#grid)" opacity="0.72"/>
+  <rect width="1600" height="520" rx="30" fill="url(#hero-glow)"/>
+
+  <g opacity="0.85">
+    <path d="M80 430H1520" stroke="url(#hero-line)" stroke-width="1.4"/>
+    <path d="M80 92H1520" stroke="url(#hero-line)" stroke-width="1"/>
+  </g>
+
+  <g transform="translate(118 120)">
+    <text x="0" y="0" fill="#94A3B8" font-family="JetBrains Mono, Consolas, Menlo, monospace" font-size="22" letter-spacing="2">BACKEND ENGINEER</text>
+    <text x="0" y="76" fill="#E6EDF3" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="64" font-weight="700">Java • Spring Boot • Distributed Systems</text>
+    <text x="0" y="124" fill="#9BA8B7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26">Reliable APIs, event-driven services, cloud-native platforms.</text>
+
+    <g transform="translate(0 182)" font-family="JetBrains Mono, Consolas, Menlo, monospace" font-size="18">
+      <rect x="0" y="0" width="724" height="96" rx="14" fill="#0A0F16" stroke="#1F2937"/>
+      <circle cx="28" cy="28" r="6" fill="#EF4444"/>
+      <circle cx="50" cy="28" r="6" fill="#F59E0B"/>
+      <circle cx="72" cy="28" r="6" fill="#22C55E"/>
+      <text x="28" y="66" fill="#00E5FF">$</text>
+      <text x="56" y="66" fill="#CBD5E1">deploy --service api-gateway --env production</text>
+      <rect x="544" y="50" width="8" height="24" rx="3" fill="#00E5FF">
+        <animate attributeName="opacity" values="1;0.2;1" dur="1.15s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <g transform="translate(990 130)" filter="url(#soft-glow)">
+    <g opacity="0.92">
+      <path d="M230 84L378 164L378 306L230 386L82 306L82 164L230 84Z" stroke="#00E5FF" stroke-width="2.4"/>
+      <path d="M230 140L326 194V276L230 330L134 276V194L230 140Z" stroke="#1F6FEB" stroke-width="1.8" opacity="0.9"/>
+      <path d="M230 84V140M378 164L326 194M378 306L326 276M230 386V330M82 306L134 276M82 164L134 194" stroke="#2DD4BF" stroke-width="1.2" opacity="0.7"/>
+    </g>
+    <g>
+      <circle cx="230" cy="84" r="9" fill="#00E5FF"/>
+      <circle cx="378" cy="164" r="9" fill="#1F6FEB"/>
+      <circle cx="378" cy="306" r="9" fill="#00E5FF"/>
+      <circle cx="230" cy="386" r="9" fill="#2DD4BF"/>
+      <circle cx="82" cy="306" r="9" fill="#1F6FEB"/>
+      <circle cx="82" cy="164" r="9" fill="#00E5FF"/>
+      <circle cx="230" cy="236" r="18" fill="#0D1117" stroke="#E6EDF3" stroke-width="2"/>
+      <text x="230" y="242" text-anchor="middle" fill="#E6EDF3" font-family="JetBrains Mono, Consolas, Menlo, monospace" font-size="17" font-weight="700">JVM</text>
+    </g>
+    <circle r="5" fill="#FFFFFF">
+      <animateMotion dur="6s" repeatCount="indefinite" path="M230 84L378 164L378 306L230 386L82 306L82 164L230 84"/>
+    </circle>
+  </g>
+</svg>

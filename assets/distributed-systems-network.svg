@@ -1,0 +1,87 @@
+<svg width="1600" height="420" viewBox="0 0 1600 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Distributed Systems Network Animation</title>
+  <desc id="desc">Animated dark SVG showing distributed service nodes connected by moving network packets.</desc>
+  <defs>
+    <linearGradient id="network-bg" x1="0" y1="0" x2="1600" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070D"/>
+      <stop offset="0.5" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#071923"/>
+    </linearGradient>
+    <linearGradient id="network-stroke" x1="120" y1="0" x2="1480" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F6FEB" stop-opacity="0.1"/>
+      <stop offset="0.5" stop-color="#00E5FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="node-glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .label { font: 600 18px JetBrains Mono, Consolas, Menlo, monospace; fill: #CBD5E1; }
+      .sub { font: 500 13px JetBrains Mono, Consolas, Menlo, monospace; fill: #64748B; }
+      .wire { stroke: url(#network-stroke); stroke-width: 1.6; opacity: 0.76; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="420" rx="28" fill="url(#network-bg)"/>
+  <path d="M60 340C248 220 376 214 560 284C718 344 882 138 1036 196C1232 270 1324 114 1540 88" stroke="#243041" stroke-width="1" opacity="0.8"/>
+  <path id="bus-a" class="wire" d="M170 210C318 86 476 90 612 210S902 340 1078 210S1342 72 1430 210"/>
+  <path id="bus-b" class="wire" d="M170 210H430L650 104L850 210L1050 316L1280 210H1430"/>
+  <path id="bus-c" class="wire" d="M430 210C536 314 744 314 850 210C952 108 1178 108 1280 210"/>
+
+  <g filter="url(#node-glow)">
+    <g transform="translate(170 210)">
+      <circle r="43" fill="#0A0F16" stroke="#00E5FF" stroke-width="2"/>
+      <text y="6" text-anchor="middle" class="label">EDGE</text>
+      <text y="66" text-anchor="middle" class="sub">ingress</text>
+    </g>
+    <g transform="translate(430 210)">
+      <circle r="43" fill="#0A0F16" stroke="#1F6FEB" stroke-width="2"/>
+      <text y="6" text-anchor="middle" class="label">API</text>
+      <text y="66" text-anchor="middle" class="sub">gateway</text>
+    </g>
+    <g transform="translate(650 104)">
+      <circle r="43" fill="#0A0F16" stroke="#2DD4BF" stroke-width="2"/>
+      <text y="6" text-anchor="middle" class="label">AUTH</text>
+      <text y="66" text-anchor="middle" class="sub">service</text>
+    </g>
+    <g transform="translate(850 210)">
+      <circle r="51" fill="#0A0F16" stroke="#00E5FF" stroke-width="2.4"/>
+      <text y="6" text-anchor="middle" class="label">CORE</text>
+      <text y="74" text-anchor="middle" class="sub">domain</text>
+    </g>
+    <g transform="translate(1050 316)">
+      <circle r="43" fill="#0A0F16" stroke="#1F6FEB" stroke-width="2"/>
+      <text y="6" text-anchor="middle" class="label">DB</text>
+      <text y="66" text-anchor="middle" class="sub">state</text>
+    </g>
+    <g transform="translate(1280 210)">
+      <circle r="43" fill="#0A0F16" stroke="#2DD4BF" stroke-width="2"/>
+      <text y="6" text-anchor="middle" class="label">CACHE</text>
+      <text y="66" text-anchor="middle" class="sub">redis</text>
+    </g>
+    <g transform="translate(1430 210)">
+      <circle r="43" fill="#0A0F16" stroke="#00E5FF" stroke-width="2"/>
+      <text y="6" text-anchor="middle" class="label">QUEUE</text>
+      <text y="66" text-anchor="middle" class="sub">kafka</text>
+    </g>
+  </g>
+
+  <g filter="url(#node-glow)">
+    <circle r="6" fill="#FFFFFF">
+      <animateMotion dur="5.8s" repeatCount="indefinite" path="M170 210C318 86 476 90 612 210S902 340 1078 210S1342 72 1430 210"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="5.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5" fill="#00E5FF">
+      <animateMotion dur="4.2s" repeatCount="indefinite" path="M170 210H430L650 104L850 210L1050 316L1280 210H1430"/>
+      <animate attributeName="opacity" values="0;1;0.95;0" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5" fill="#2DD4BF">
+      <animateMotion dur="4.9s" begin="1s" repeatCount="indefinite" path="M430 210C536 314 744 314 850 210C952 108 1178 108 1280 210"/>
+      <animate attributeName="opacity" values="0;1;0.9;0" dur="4.9s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
