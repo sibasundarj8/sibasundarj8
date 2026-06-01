@@ -1,0 +1,112 @@
+name: Refresh Profile Assets
+
+run-name: Refresh profile assets
+
+on:
+  # Weekly at 03:17 UTC every Monday, which is 08:47 IST.
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-assets-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-svg-cards:
+    name: Local SVG cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Generate local analytics SVGs
+        run: python scripts/generate-profile-cards.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Detect generated SVG changes
+        id: svg-diff
+        shell: bash
+        run: |
+          if git diff --quiet -- assets/github-stats-card.svg assets/top-langs-card.svg; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No local SVG card changes."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Local SVG cards changed."
+          fi
+
+      - name: Commit changed SVG cards
+        if: steps.svg-diff.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/github-stats-card.svg assets/top-langs-card.svg
+          git commit -m "chore: refresh profile svg cards"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  contribution-snake:
+    name: Contribution snake SVGs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v5
+
+      - name: Generate snake SVGs
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: sibasundarj8
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish changed snake SVGs
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_BRANCH: output
+        run: |
+          set -euo pipefail
+
+          mkdir -p output-branch
+          git -C output-branch init
+          git -C output-branch remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          if git -C output-branch ls-remote --exit-code --heads origin "${TARGET_BRANCH}" >/dev/null 2>&1; then
+            git -C output-branch fetch --depth=1 origin "${TARGET_BRANCH}"
+            git -C output-branch checkout -B "${TARGET_BRANCH}" FETCH_HEAD
+          else
+            git -C output-branch checkout --orphan "${TARGET_BRANCH}"
+          fi
+
+          cp dist/github-contribution-grid-snake*.svg output-branch/
+          git -C output-branch add github-contribution-grid-snake.svg github-contribution-grid-snake-dark.svg
+
+          if git -C output-branch diff --cached --quiet; then
+            echo "No snake SVG changes to publish."
+            exit 0
+          fi
+
+          git -C output-branch config user.name "github-actions[bot]"
+          git -C output-branch config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C output-branch commit -m "chore: refresh contribution snake"
+          git -C output-branch push origin "HEAD:${TARGET_BRANCH}"

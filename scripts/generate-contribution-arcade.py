@@ -165,11 +165,10 @@ def draw_header(
     current_frame: int,
     total_frames: int,
 ) -> None:
-    updated = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     draw.text((GRID_X, 25), "GitHub Contribution Arcade", fill=WHITE, font=FONT_22)
     draw.text((GRID_X, 52), f"{USERNAME}  |  {summary}", fill=MUTED, font=FONT_14)
 
-    status = f"cells: {active_count}/{total_cells} active  |  updated {updated}"
+    status = f"cells: {active_count}/{total_cells} active  |  source: public GitHub grid"
     draw.text((GRID_X + GRID_W, 31), status, fill=DIM, font=FONT_12, anchor="ra")
 
     progress = min(1.0, current_frame / max(1, total_frames))

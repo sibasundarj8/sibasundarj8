@@ -8,7 +8,7 @@
   Optional customizations:
   - Add email, LinkedIn, or portfolio badges if you want them visible.
   - Replace the functional project category cards with exact repo cards once you pick featured repositories.
-  - Create a GitHub Action for the contribution snake and publish it to the `output` branch.
+  - Generated profile assets refresh weekly, and third-party cards use dynamic SVG URLs where possible.
 -->
 
 <p align="center">
@@ -267,7 +267,15 @@ backend profile
 
 ## GitHub Analytics
 
-<!-- GitHub stats and language cards are local SVGs generated hourly from the GitHub API by .github/workflows/profile-cards.yml. -->
+<!--
+  Dynamic SVG providers are used where they preserve the current visual layout.
+  The two custom local cards below are refreshed weekly by .github/workflows/profile-assets.yml
+  only when the semantic SVG content changes.
+
+  Dynamic alternatives if you ever want zero committed analytics SVGs:
+  - GitHub stats: https://github-readme-stats.vercel.app/api?username=sibasundarj8
+  - Top languages: https://github-readme-stats.vercel.app/api/top-langs/?username=sibasundarj8
+-->
 
 <table>
   <tr>
@@ -311,7 +319,7 @@ backend profile
 
 ### Contribution Snake
 
-<!-- Visible immediately from assets/gh-space-shooter.gif. The workflow regenerates it hourly from your latest GitHub contribution grid. -->
+<!-- The snake SVGs are refreshed weekly on the output branch and published only when the generated SVG content changes. -->
 
 <p align="center">
     <picture>
@@ -476,9 +484,9 @@ DNS -> CDN/Edge -> Load Balancer -> API Gateway -> Service Mesh
   | `assets/distributed-systems-network.svg` | Distributed systems / service topology visual |
   | `assets/api-gateway-architecture-divider.svg` | Architecture divider for backend sections |
   | `assets/kafka-event-stream.svg` | Event streaming and Kafka visual |
-  | `assets/github-stats-card.svg` | Local GitHub analytics card generated from the GitHub API |
-  | `assets/top-langs-card.svg` | Local language breakdown card generated from repository language data |
-  | `assets/gh-space-shooter.gif` | Real contribution-grid arcade GIF generated from your latest GitHub calendar |
+  | `assets/github-stats-card.svg` | Local GitHub analytics card refreshed weekly when API data changes |
+  | `assets/top-langs-card.svg` | Local language breakdown card refreshed weekly when repository language data changes |
+  | `output/github-contribution-grid-snake*.svg` | Contribution snake SVGs served from the output branch |
   | `assets/jvm-neon-footer.svg` | JVM-inspired footer visual |
   | `assets/terminal-separator.svg` | Full terminal-style section separator |
   | `assets/terminal-separator-compact.svg` | Compact section separator |

@@ -11,6 +11,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote
@@ -31,6 +32,8 @@ CYAN = "#00E5FF"
 BLUE = "#1F6FEB"
 GREEN = "#2DD4BF"
 AMBER = "#FFB000"
+
+UPDATED_FOOTER_RE = re.compile(r"Updated [A-Z][a-z]{2} \d{2}, \d{4} via GitHub API")
 
 
 def request_json(url: str) -> Any:
@@ -58,6 +61,22 @@ def xml(text: object) -> str:
 
 def fmt(num: int) -> str:
     return f"{num:,}"
+
+
+def normalize_generated_svg(content: str) -> str:
+    return UPDATED_FOOTER_RE.sub("Updated <date> via GitHub API", content)
+
+
+def write_if_semantically_changed(path: Path, content: str) -> bool:
+    if path.exists():
+        current = path.read_text(encoding="utf-8")
+        if normalize_generated_svg(current) == normalize_generated_svg(content):
+            print(f"No semantic changes in {path.relative_to(ROOT)}")
+            return False
+
+    path.write_text(content, encoding="utf-8")
+    print(f"Updated {path.relative_to(ROOT)}")
+    return True
 
 
 def search_count(query: str, kind: str = "issues") -> int:
@@ -196,8 +215,8 @@ def main() -> None:
         for lang, amount in data.items():
             languages[lang] = languages.get(lang, 0) + int(amount)
 
-    (ASSETS / "github-stats-card.svg").write_text(generate_github_stats(user, repos), encoding="utf-8")
-    (ASSETS / "top-langs-card.svg").write_text(generate_language_card(languages), encoding="utf-8")
+    write_if_semantically_changed(ASSETS / "github-stats-card.svg", generate_github_stats(user, repos))
+    write_if_semantically_changed(ASSETS / "top-langs-card.svg", generate_language_card(languages))
 
 
 if __name__ == "__main__":
