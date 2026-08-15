@@ -345,19 +345,10 @@ backend profile
         <li>Complexity analysis and implementation discipline</li>
       </ul>
   </tr>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="https://www.geeksforgeeks.org/profile/sibasundarj8?tab=activity">
-        <img width="100%" src="https://gfgstatscard.vercel.app/sibasundarj8?theme=dark" alt="GeeksforGeeks stats card" />
-      </a>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://leetcode.com/u/Sibasundarj8/">
-        <img width="100%" src="https://leetcard.jacoblin.cool/Sibasundarj8?theme=dark&amp;font=JetBrains%20Mono&amp;ext=heatmap" alt="LeetCode stats card" />
-      </a>
-    </td>
-  </tr>
 </table>
+
+[![GeeksforGeeks Stats](https://geeksforgeekscard.up.railway.app/sibasundarj8?theme=dark)](https://www.geeksforgeeks.org/profile/sibasundarj8)
+[![LeetCode Stats](https://leetcard.jacoblin.cool/Sibasundarj8?theme=dark&amp;font=JetBrains%20Mono&amp;ext=heatmap)](https://leetcode.com/u/Sibasundarj8/)
 
 ### LeetCode Contest Rating
 
