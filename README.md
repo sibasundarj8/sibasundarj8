@@ -335,21 +335,17 @@ backend profile
 
 ## Competitive Programming
 
-<table>
-  <tr>
-    <h3>DSA Practice</h3>
-      <ul>
-        <li>Arrays, strings, hashing, two pointers, sliding window</li>
-        <li>Trees, graphs, heaps, tries, union-find</li>
-        <li>Dynamic programming, recursion, backtracking</li>
-        <li>Complexity analysis and implementation discipline</li>
-      </ul>
-  </tr>
-</table>
+### DSA Practice
 
-[![GeeksforGeeks Stats](https://geeksforgeekscard.up.railway.app/sibasundarj8?theme=dark)](https://www.geeksforgeeks.org/profile/sibasundarj8)
-[![LeetCode Stats](https://leetcard.jacoblin.cool/Sibasundarj8?theme=dark&amp;font=JetBrains%20Mono&amp;ext=heatmap)](https://leetcode.com/u/Sibasundarj8/)
+- Arrays, strings, hashing, two pointers, sliding window
+- Trees, graphs, heaps, tries, union-find
+- Dynamic programming, recursion, backtracking
+- Complexity analysis and implementation discipline
 
+|                                                                 GeeksforGeeks                                                                  |                                                                      LeetCode                                                                       |
+|:----------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|
+| [![GeeksforGeeks Stats](https://geeksforgeekscard.up.railway.app/sibasundarj8?theme=dark)](https://www.geeksforgeeks.org/profile/sibasundarj8) | [![LeetCode Stats](https://leetcard.jacoblin.cool/Sibasundarj8?theme=dark&font=JetBrains%20Mono&ext=heatmap)](https://leetcode.com/u/Sibasundarj8/) |
+                                                                                                                                                |                                                                                                                                                     
 ### LeetCode Contest Rating
 
 <p align="center">
