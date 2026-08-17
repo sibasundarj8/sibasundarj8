@@ -26,14 +26,14 @@
     
     <g transform="translate(36 128)">
       <text x="0" y="0" fill="#9BA8B7" font-size="15" font-weight="600">Public Repos</text>
-      <text x="0" y="38" fill="#E6EDF3" font-size="31" font-weight="800">8</text>
+      <text x="0" y="38" fill="#E6EDF3" font-size="31" font-weight="800">10</text>
       <rect x="0" y="52" width="152" height="3" rx="1.5" fill="#243041"/>
       <rect x="0" y="52" width="88" height="3" rx="1.5" fill="#00E5FF"/>
     </g>
     
     <g transform="translate(236 128)">
       <text x="0" y="0" fill="#9BA8B7" font-size="15" font-weight="600">Public Commits</text>
-      <text x="0" y="38" fill="#E6EDF3" font-size="31" font-weight="800">1,456</text>
+      <text x="0" y="38" fill="#E6EDF3" font-size="31" font-weight="800">1,716</text>
       <rect x="0" y="52" width="152" height="3" rx="1.5" fill="#243041"/>
       <rect x="0" y="52" width="88" height="3" rx="1.5" fill="#1F6FEB"/>
     </g>
@@ -66,5 +66,5 @@
       <rect x="0" y="52" width="88" height="3" rx="1.5" fill="#1F6FEB"/>
     </g>
   </g>
-  <text x="34" y="302" fill="#64748B" font-family="JetBrains Mono, Consolas, monospace" font-size="12">Updated May 24, 2026 via GitHub API</text>
+  <text x="34" y="302" fill="#64748B" font-family="JetBrains Mono, Consolas, monospace" font-size="12">Updated Aug 17, 2026 via GitHub API</text>
 </svg>
